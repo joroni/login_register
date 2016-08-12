@@ -56,7 +56,7 @@ function login(){
 		    console.log('goto user.html');
 	}else{
 
-		var user_name_input = $('#user_pass_input').val();
+		var user_name_input = $('#user_name_input').val();
 		var user_pass_input = $('#user_pass_input').val();
 			 
 		var username = localStorage.getItem("username");
@@ -65,9 +65,9 @@ function login(){
 
  		if(user_name_input == '' || user_pass_input == ''){
 	 		if(user_name_input == ''){ $('#login_username').show(); }
-	 		if(user_name_input == ''){ $('#login_password').show(); }
+	 		if(user_pass_input == ''){ $('#login_password').show(); }
 		}else{
-			if(user_name_input == username && user_name_input == password){
+			if(user_name_input == username && user_pass_input == password){
 				localStorage.setItem("userlogin", username);
 				window.location.href = "user.html";
 			}else{
