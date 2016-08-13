@@ -11,3 +11,28 @@ $(document).ready(function() {
      });
     });
  });
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+$(function() {
+  $('#maincontent').hide();
+});
+
+function hideSplash() {
+  $( ".splash" ).fadeOut( "slow", function() {
+    // Animation complete.
+	$('#maincontent').fadeIn();
+  });
+}
+
+window.onload=function() { setTimeout(hideSplash, 2000); }
+
+  
