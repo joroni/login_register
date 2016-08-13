@@ -117,10 +117,7 @@ $(function() {
 });
 
 function hideSplash() {
-  $( ".splash" ).fadeOut( "slow", function() {
-    // Animation complete.
-	$('#maincontent').fadeIn();
-  });
+  $( ".splash" ).fadeOut( "slow");
 }
 
 //window.onload=function() { setTimeout(hideSplash, 2000); }
