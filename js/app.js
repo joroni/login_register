@@ -7,6 +7,10 @@ document.getElementById("result").innerHTML = localStorage.getItem("lastname");
 
 */
 
+
+
+
+
 function check_storage(){
 
 	if (localStorage['userlogin']) {
@@ -49,14 +53,15 @@ function register(){
 
  
 function login(){
-
-
+		var user_name_input = $('#user_name_input').val();
+		var user_pass_input = $('#user_pass_input').val();
+/*
 	if (localStorage['userlogin']) {
 		    window.location.replace("user.html");
 		    console.log('goto user.html');
 	}else{
 
-		var user_name_input = $('#user_name_input').val();
+		var user_name_input = $('#user_pass_input').val();
 		var user_pass_input = $('#user_pass_input').val();
 			 
 		var username = localStorage.getItem("username");
@@ -65,9 +70,9 @@ function login(){
 
  		if(user_name_input == '' || user_pass_input == ''){
 	 		if(user_name_input == ''){ $('#login_username').show(); }
-	 		if(user_pass_input == ''){ $('#login_password').show(); }
+	 		if(user_name_input == ''){ $('#login_password').show(); }
 		}else{
-			if(user_name_input == username && user_pass_input == password){
+			if(user_name_input == username && user_name_input == password){
 				localStorage.setItem("userlogin", username);
 				window.location.href = "user.html";
 			}else{
@@ -77,6 +82,46 @@ function login(){
 			}			
 		}
 }
+*/
+
+$.post( "http://104.238.96.209/~newsimtms/loginmobileapp", { user: user_name_input, pass: user_pass_input })
+  .done(function( data ) {
+		if(data == 'Error'){
+	 		$('#login_username_error').show(); 
+	 		$('#login_password_error').show(); 				
+		}else if(data == 'success'){
+			localStorage.setItem("userlogin", user_name_input);
+			window.location.href = "user.html";
+		}
+  });
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$(function() {
+  $('#maincontent').hide();
+});
+
+function hideSplash() {
+  $( ".splash" ).fadeOut( "slow", function() {
+    // Animation complete.
+	$('#maincontent').fadeIn();
+  });
+}
+
+window.onload=function() { setTimeout(hideSplash, 2000); }
+
  
