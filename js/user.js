@@ -27,6 +27,7 @@ $(function() {
 
 function hideSplash() {
   $( ".splash" ).fadeOut( "slow");
+  $('#maincontent').fadeIn("slow");
 }
 
 //window.onload=function() { setTimeout(hideSplash, 2000); }
