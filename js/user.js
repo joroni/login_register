@@ -20,10 +20,9 @@ $(document).ready(function() {
 
 
 
-
-
 $(function() {
   $('#maincontent').hide();
+  setTimeout(hideSplash, 2000);
 });
 
 function hideSplash() {
@@ -33,6 +32,4 @@ function hideSplash() {
   });
 }
 
-window.onload=function() { setTimeout(hideSplash, 2000); }
-
-  
+//window.onload=function() { setTimeout(hideSplash, 2000); }

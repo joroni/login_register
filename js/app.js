@@ -113,6 +113,7 @@ $.post( "http://104.238.96.209/~newsimtms/loginmobileapp", { user: user_name_inp
 
 $(function() {
   $('#maincontent').hide();
+  setTimeout(hideSplash, 2000);
 });
 
 function hideSplash() {
@@ -122,6 +123,6 @@ function hideSplash() {
   });
 }
 
-window.onload=function() { setTimeout(hideSplash, 2000); }
+//window.onload=function() { setTimeout(hideSplash, 2000); }
 
  
