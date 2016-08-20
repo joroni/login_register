@@ -12,6 +12,7 @@ $(document).ready(function() {
         $("#output").append("<tr><td>Username:  "+ field.username + " </td></tr><tr><td>Password: "+ field.password + "</td></tr>");
 		$('#user_username').val(field.username);
 		$('#user_password').val(field.password);
+		$('#my_fname').text(field.fname);
 		$('#fname').val(field.fname);
      });
     });
@@ -28,6 +29,7 @@ $.post( "http://104.238.96.209/~newsimtms/db/update/user", { username: username,
 	 		$('#update_0').show(); 				
 		}else if(data == 1){   
 			$('#update_1').show(); 
+			$('#my_fname').text(fname);
 			//window.location.href = "user.html";
 		}
   });
