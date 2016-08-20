@@ -84,12 +84,12 @@ function login(){
 }
 */
 
-$.post( "http://104.238.96.209/~newsimtms/loginmobileapp", { user: user_name_input, pass: user_pass_input })
+$.post( "http://104.238.96.209/~newsimtms/db/loginuser", { username: user_name_input, password: user_pass_input })
   .done(function( data ) {
-		if(data == 'Error'){
+		if(data == 0){
 	 		$('#login_username_error').show(); 
 	 		$('#login_password_error').show(); 				
-		}else if(data == 'success'){
+		}else if(data == 1){   
 			localStorage.setItem("userlogin", user_name_input);
 			window.location.href = "user.html";
 		}

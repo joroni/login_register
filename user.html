@@ -43,9 +43,22 @@
           <div class="page-content">
 
 
-			<table>
+			<table class='table table-bordered'>
 				<div id='output'></div>
 			</table>
+			
+			<input type='hidden' id='user_username'><Br>
+			Firstname:<Br>
+			<div style='clear:both;'></div>
+			
+              <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="fname">
+              </div>
+			<button type='button' class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect " onclick='update_user();'>
+				Update
+			</button>
+			<div id='update_1' style='display:none;'>user updated</div>
+			<div id='update_0' style='display:none;'>Error</div>
 		
 
           </div>
