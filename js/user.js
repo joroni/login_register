@@ -28,7 +28,7 @@ $.post( "http://104.238.96.209/~newsimtms/db/update/user", { username: username,
 	 		$('#update_0').show(); 				
 		}else if(data == 1){   
 			$('#update_1').show(); 
-			window.location.href = "user.html";
+			//window.location.href = "user.html";
 		}
   });
 	

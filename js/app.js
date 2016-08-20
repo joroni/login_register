@@ -112,8 +112,8 @@ $.post( "http://104.238.96.209/~newsimtms/db/loginuser", { username: user_name_i
 
 
 $(function() {
-  $('#maincontent').hide();
-  setTimeout(hideSplash, 2000);
+  //$('#maincontent').hide();
+  //setTimeout(hideSplash, 2000);
 });
 
 function hideSplash() {
