@@ -38,15 +38,35 @@ function register(){
  		if(password == ''){ $('#reg_password_err').show(); }
  		if(fname == ''){ $('#reg_fname_err').show(); }
  		if(lname == ''){ $('#reg_lname_err').show(); }
-
+		console.log('err empty field'); 	
  	}else{
 
-		localStorage.setItem("username", username);
-		localStorage.setItem("password", password);
-		localStorage.setItem("fname", fname);
-		localStorage.setItem("lname", lname);
-		localStorage.setItem("userlogin", username);
-		window.location.href = "user.html";
+
+$.post( "http://104.238.96.209/~newsimtms/db/register/user", { username: username, password: password, fname: fname, lname: lname })
+  .done(function( data ) {
+		if(data == 0){
+	 		if(username == ''){ $('#reg_username_err').show(); }
+	 		if(password == ''){ $('#reg_password_err').show(); }
+	 		if(fname == ''){ $('#reg_fname_err').show(); }
+	 		if(lname == ''){ $('#reg_lname_err').show(); }		
+	 		console.log('err empty field'); 	
+		}else if(data == 1){   
+					localStorage.setItem("username", username);
+					localStorage.setItem("password", password);
+					localStorage.setItem("fname", fname);
+					localStorage.setItem("lname", lname);
+					localStorage.setItem("userlogin", username);
+					window.location.href = "user.html";
+		}else {      
+			alert(data);
+			$('#reg_username').val('');
+			$('#user_taken').show();
+			console.log('err'); 
+		}
+  });
+
+
+
  	}
 
 }
@@ -108,19 +128,5 @@ $.post( "http://104.238.96.209/~newsimtms/db/loginuser", { username: user_name_i
 
 
 
-
-
-
-$(function() {
-  //$('#maincontent').hide();
-  //setTimeout(hideSplash, 2000);
-});
-
-function hideSplash() {
-  $( ".splash" ).fadeOut( "slow");
-  $('#maincontent').fadeIn("slow");
-}
-
-//window.onload=function() { setTimeout(hideSplash, 2000); }
 
  

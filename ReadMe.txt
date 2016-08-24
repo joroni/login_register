@@ -12,3 +12,8 @@ $(document).ready(function() {
  
  	$get = DB::table('user')->get();
 	return Response::json($get);
+
+
+			'database'  => 'newsimtm_profile',
+			'username'  => 'newsimtm_user',
+			'password'  => 'Newsimtms123!321!',

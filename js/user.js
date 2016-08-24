@@ -4,7 +4,7 @@ function log_out(){
 }
 
 
-$(document).ready(function() {
+$(function() {			
 	var user = localStorage.getItem('userlogin');
 	
     $.getJSON("http://104.238.96.209/~newsimtms/db/get_user_details/"+user,function(result){
@@ -12,8 +12,8 @@ $(document).ready(function() {
         $("#output").append("<tr><td>Username:  "+ field.username + " </td></tr><tr><td>Password: "+ field.password + "</td></tr>");
 		$('#user_username').val(field.username);
 		$('#user_password').val(field.password);
-		$('#my_fname').text(field.fname);
 		$('#fname').val(field.fname);
+		$('#user_firstname').text(field.fname);
      });
     });
  });
@@ -29,26 +29,11 @@ $.post( "http://104.238.96.209/~newsimtms/db/update/user", { username: username,
 	 		$('#update_0').show(); 				
 		}else if(data == 1){   
 			$('#update_1').show(); 
-			$('#my_fname').text(fname);
+			$('#user_firstname').text(fname); 
 			//window.location.href = "user.html";
 		}
   });
 	
 } 
  
-
-
-
-
-
-$(function() {
-  $('#maincontent').hide();
-  setTimeout(hideSplash, 2000);
-});
-
-function hideSplash() {
-  $( ".splash" ).fadeOut( "slow");
-  $('#maincontent').fadeIn("slow");
-}
-
-//window.onload=function() { setTimeout(hideSplash, 2000); }
+ 

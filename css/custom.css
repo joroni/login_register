@@ -2,4 +2,57 @@ body {
 	font-weight: 100;
 	font-family: 'Roboto';
 }
+.mdl-layout__drawer-button .material-icons {
+    font-size: 67px !important;
+    margin-top: -11px !important;
+}
+.demo-card-wide.mdl-card {
+  width: 100%;
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url('office.jpg') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+.mdl-layout__drawer{
  
+}
+
+.demo-card-wide a{
+	display:block;
+}
+#right_btn{
+	position:absolute;
+	right:15px;
+}
+div#swipe_menu {
+    display: block;
+    width: 90%;
+    height: 56px;
+}
+span#top_title {
+    text-align: center;
+    margin: 10px;
+    font-size: 30px;
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
